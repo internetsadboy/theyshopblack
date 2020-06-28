@@ -1,0 +1,156 @@
+body {
+  margin: 0px;
+  color: white;
+  background-color: black;
+}
+
+.App {
+  margin-top: 50px;
+}
+
+.App-header li a {
+  color: white;
+  padding: 4px 6px;
+  letter-spacing: -1px;
+}
+
+.App-header a:hover {
+  color: black;
+  font-weight: bold;
+  background-color: white;
+}
+
+.App-intro {
+  font-size: medium;
+}
+
+.search-match {
+  color: yellow;
+}
+
+.search-match-name {
+  color: orangered;
+}
+
+.search-match-neighborhood {
+  color: green;
+}
+
+@media only screen and (max-width: 500px) {
+
+  button {
+    display: block !important;
+    padding: 2vw;
+    font-size: 3vh;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    align-self: flex-start !important;
+  }
+
+  ul {
+    flex-direction: column;
+    float: none !important;
+    margin-right: 0 !important;
+  }
+
+  li {
+    margin: 0;
+    font-size: 3vh !important;
+  }
+
+  a {
+    display: block;
+  }
+}
+
+#header {
+  font-weight: 100;
+  font-size: 36px;
+  font-weight: 800;
+  padding: 0;
+  margin: 0;
+  margin-left: 23px;
+}
+
+input {
+  font-family: monospace;
+  border-style: hidden;
+  width: 870px;
+	background: #fff;
+	box-shadow: 0 2px 6px 0 rgba(0, 0, 0 , .1);
+	border: 0;
+	outline: 0;
+	padding: 22px 18px;
+  font-size: xx-large;
+  margin-left: 30px;
+  margin-top: 30px;
+  max-width: 86.5%;
+}
+
+input:focus {
+  outline: none;
+}
+
+nav {
+  font-family: monospace;
+  width: 100vw;
+  padding: 0 20px;
+}
+
+nav ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  float: right;
+  margin-right: 30px;
+}
+
+nav li {
+  list-style-type: none;
+  margin: 0 2vw;
+  font-size: 2vh;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  color: yellow;
+  background-color: black;
+}
+
+button {
+  display: none;
+}
+
+#header-line {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: black;
+  height: 4px;
+}
+
+#search-results {
+  margin-top: 30px;
+}
+
+#search-results ul {
+  font-family: monospace;
+  font-size: 16px;
+}
+
+table {
+  margin-left: 35px;
+  font-weight: 800;
+}
+
+#search-results li {
+  list-style-type: none;
+  border: 0px solid;
+  padding: 10px 0;
+}
