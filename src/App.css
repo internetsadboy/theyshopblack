@@ -28,43 +28,6 @@ body {
   color: yellow;
 }
 
-.search-match-name {
-  color: orangered;
-}
-
-.search-match-neighborhood {
-  color: green;
-}
-
-@media only screen and (max-width: 500px) {
-
-  button {
-    display: block !important;
-    padding: 2vw;
-    font-size: 3vh;
-    background-color: white;
-    border: none;
-    cursor: pointer;
-    outline: none;
-    align-self: flex-start !important;
-  }
-
-  ul {
-    flex-direction: column;
-    float: none !important;
-    margin-right: 0 !important;
-  }
-
-  li {
-    margin: 0;
-    font-size: 3vh !important;
-  }
-
-  a {
-    display: block;
-  }
-}
-
 #header {
   font-weight: 100;
   font-size: 36px;
@@ -127,12 +90,13 @@ button {
   display: none;
 }
 
-#header-line {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background-color: black;
-  height: 4px;
+#search-listing-format {
+  padding-left: 40px;
+  font-size: 24px;
+}
+
+#search-summary {
+  font-size: 30px;
 }
 
 #search-results {
@@ -153,4 +117,34 @@ table {
   list-style-type: none;
   border: 0px solid;
   padding: 10px 0;
+}
+
+/** MOBILE ADJUSTMENTS **/
+@media only screen and (max-width: 500px) {
+
+  button {
+    display: block !important;
+    padding: 2vw;
+    font-size: 3vh;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    align-self: flex-start !important;
+  }
+
+  ul {
+    flex-direction: column;
+    float: none !important;
+    margin-right: 0 !important;
+  }
+
+  li {
+    margin: 0;
+    font-size: 3vh !important;
+  }
+
+  a {
+    display: block;
+  }
 }

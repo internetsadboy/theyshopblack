@@ -9,7 +9,6 @@ class App extends Component {
 
     this.state = {
       isLoading: false,
-      isMobile: false,
       restaurants: null,
       input: ''
     };
@@ -32,7 +31,7 @@ class App extends Component {
   render() {
     const { restaurants, isLoading, input } = this.state;
 
-    // default value
+    // default value => ALL
     let numRestos = restaurants && restaurants.length;
 
     let list;
@@ -50,26 +49,19 @@ class App extends Component {
           }
 
           if (r.name.toLowerCase().indexOf(input) !== -1) {
-            r.nameSearch = '<span class="search-match-name">' + r.name + '</span>';
+            r.nameSearch = '<span class="search-match">' + r.name + '</span>';
             return true;
-          } else {
-            delete r.nameSearch;
           }
 
           if (r.neighborhood.toLowerCase().indexOf(input) !== -1) {
-            r.neighborhoodSearch = '<span class="search-match-neighborhood">' + r.neighborhood + '</span>';
+            r.neighborhoodSearch = '<span class="search-match">' + r.neighborhood + '</span>';
             return true;
-          } else {
-            delete r.neighborhoodSearch;
           }
 
-          if (r.cuisine.toLowerCase().indexOf(input) !== -1 && r.cuisine) {
+          if (r.cuisine && r.cuisine.toLowerCase().indexOf(input) !== -1) {
             r.cuisineSearch = '<span class="search-match">' + r.cuisine + '</span>';
             return true;
-          } else {
-            delete r.cuisineSearch;
           }
-
         })
         .sort(function(a, b) {
             let nameA = a.name.toLowerCase();
@@ -102,7 +94,8 @@ class App extends Component {
 
             if (r.cuisine !== undefined && r.cuisineSearch) {
               listing += ' | ' + r.cuisineSearch
-            } else if (r.cuisine !== undefined){
+            } else if (r.cuisine !== undefined) {
+              // sometimes data pt "cuisine" not provided
               listing += ' | ' + r.cuisine;
             }
 
@@ -152,11 +145,12 @@ class App extends Component {
                 <table>
                   <tbody>
                     <tr>
-                      <td>{numRestos} Restaurants in LA County</td>
+                      <td id="search-summary">{numRestos} Restaurants in LA County</td>
                     </tr>
                   </tbody>
                 </table>
               </div>
+              <h3 id="search-listing-format">restaurant | neighborhood | cuisine</h3>
               <ul>
               {list}
               </ul>
