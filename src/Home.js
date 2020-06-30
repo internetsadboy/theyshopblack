@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
 
+import { Link } from 'react-router-dom';
 
-class App extends Component {
+
+class Home extends Component {
 
   constructor(props) {
     super(props);
@@ -50,22 +52,29 @@ class App extends Component {
 
           if (r.name.toLowerCase().indexOf(input) !== -1) {
             r.nameSearch = '<span class="search-match">' + r.name + '</span>';
+            console.log('... input', input)
             return true;
+          } else {
+            delete r.nameSearch;
           }
 
           if (r.neighborhood.toLowerCase().indexOf(input) !== -1) {
             r.neighborhoodSearch = '<span class="search-match">' + r.neighborhood + '</span>';
             return true;
+          } else {
+            delete r.neighborhoodSearch;
           }
 
           if (r.cuisine && r.cuisine.toLowerCase().indexOf(input) !== -1) {
             r.cuisineSearch = '<span class="search-match">' + r.cuisine + '</span>';
             return true;
+          } else {
+            delete r.cuisineSearch;
           }
         })
         .sort(function(a, b) {
-            let nameA = a.name.toLowerCase();
-            let nameB = b.name.toLowerCase();
+            let nameA = a && a.name && a.name.toLowerCase();
+            let nameB = b && b.name && b.name.toLowerCase();
             if (nameA < nameB) {
               return -1;
             }
@@ -116,15 +125,18 @@ class App extends Component {
 
     return (
       <div>
-        <div id="header-line"></div>
         <div className="App">
           <div className="App-header">
             <nav>
               <span id="header">we shop black</span>
               <ul>
                 <button> 🞬 </button>
-                <li><a href="#">new business</a></li>
-                <li><a href="#">contact</a></li>
+                <li>
+                  <Link to="/new-business">new business</Link>
+                </li>
+                <li>
+                  <Link to="/contact">contact</Link>
+                </li>
               </ul>
             </nav>
           </div>
@@ -162,4 +174,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Home;
