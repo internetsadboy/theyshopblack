@@ -1,9 +1,37 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
-import './index.css';
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
+
+import Home from './Home';
+import Contact from './Contact';
+import NewBusiness from './NewBusiness';
+
+function App() {
+  return (
+    <div>
+      <Switch>
+        <Route path="/contact">
+          <Contact />
+        </Route>
+        <Route path="/new-business">
+          <NewBusiness />
+        </Route>
+        <Route path="/">
+          <Home />
+        </Route>
+      </Switch>
+    </div>
+  );
+}
 
 ReactDOM.render(
-  <App />,
+  <Router>
+    <App />
+  </Router>,
   document.getElementById('root')
 );
