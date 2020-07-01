@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import Navigation from './Navigation';
+
 class NewBusiness extends Component {
 
   constructor(props) {
@@ -10,8 +12,11 @@ class NewBusiness extends Component {
 
   render() {
     return (
-      <div>
-        <code>"new business" pg goes here</code>
+      <div className="App">
+        <Navigation />
+        <main>
+          <h1>new biz pg</h1>
+        </main>
       </div>
     )
   }

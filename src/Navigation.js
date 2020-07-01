@@ -13,7 +13,9 @@ class Navigation extends Component {
     return (
       <div className="App-header">
         <nav>
-          <span id="header">we shop black</span>
+          <span id="header">
+            <Link to="/">we shop black</Link>
+          </span>
           <ul>
             <button> 🞬 </button>
             <li>

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import Navigation from './Navigation';
+
 class Contact extends Component {
 
   constructor(props) {
@@ -10,8 +12,11 @@ class Contact extends Component {
 
   render() {
     return (
-      <div>
-        <code>contact page goes here</code>
+      <div className="App">
+        <Navigation />
+        <main>
+          <h1>dis da contact pg</h1>
+        </main>
       </div>
     )
   }
